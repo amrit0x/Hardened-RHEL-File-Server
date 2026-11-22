@@ -246,4 +246,4 @@ This storage will serve as the foundation for the NFS network file-sharing confi
 
 ## Evidence
 
-See the [LVM screenshots](../screenshots/lvm/) directory for terminal outputs and configuration verification.
+See the [LVM screenshots](../implementation/images/) directory for terminal outputs and configuration verification.
