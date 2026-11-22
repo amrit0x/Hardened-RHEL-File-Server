@@ -1,4 +1,4 @@
-# RHEL Secure File Server
+# Hardened Rhel File Server
 
 A hands-on Linux System Administration project focused on
 building a secure network file server using Red Hat
