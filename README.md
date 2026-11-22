@@ -1,2 +1,1 @@
-# Hardened-RHEL-File-Server
-Secure RHEL file server using LVM, NFS, firewalld, SELinux, and SSH key-based authentication.
+# Hardened RHEL File Server | LVM, NFS, SELinux, Firewalld & SSH Hardening
