@@ -183,7 +183,7 @@ Expanded the mounted XFS filesystem:
 ```bash
 xfs_growfs /srv/nfs/shared
 ```
-if we was used this command: lvextend -r -L +1G /dev/vg_nfs/lv_nfs then we does not need to run this separately xfs_growfs /srv/nfs/shared because -r do it by self
+if we was used this command: ```lvextend -r -L +1G /dev/vg_nfs/lv_nfs``` then we does not need to run this separately ```xfs_growfs /srv/nfs/shared ``` because ```-r``` do it by it self
 
 **Verification:**
 
