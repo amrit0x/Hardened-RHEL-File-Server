@@ -315,4 +315,4 @@ Demonstrated manual NFS mounting, persistent mounting through `/etc/fstab`, and 
 
 ## Evidence
 
-See the [NFS screenshots](../screenshots/nfs/) directory for server configuration, export verification, client mounting, and AutoFS testing.
+See the [NFS screenshots](https://github.com/amrit0x/Hardened-RHEL-File-Server/tree/main/implementation/Images) directory for server configuration, export verification, client mounting, and AutoFS testing.
