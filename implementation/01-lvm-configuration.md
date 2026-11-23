@@ -1,4 +1,4 @@
-# 1. LVM Storage Configuration
+# LVM Storage Configuration
 
 ## Objective
 
