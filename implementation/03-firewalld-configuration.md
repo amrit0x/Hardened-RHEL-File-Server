@@ -1,4 +1,4 @@
-# 3. Firewall Configuration (firewalld)
+# Firewall Configuration (firewalld)
 
 ## Objective
 
