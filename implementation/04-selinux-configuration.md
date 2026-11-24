@@ -10,6 +10,7 @@ while keeping SELinux in Enforcing mode.
 ### 1. Verify SELinux Status
 
 `getenforce`
+
 `sestatus`
 
 ### 2. Configure Persistent File Context
