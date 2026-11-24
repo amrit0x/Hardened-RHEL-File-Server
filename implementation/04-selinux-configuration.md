@@ -9,41 +9,39 @@ while keeping SELinux in Enforcing mode.
 ------------ Run on: RHEL Server -----------
 ### 1. Verify SELinux Status
 
-getenforce
-sestatus
+`getenforce`
+`sestatus`
 
 ### 2. Configure Persistent File Context
 
 
-semanage fcontext -a -t public_content_rw_t \
-'/srv/nfs/shared(/.*)?'
+`semanage fcontext -a -t public_content_rw_t '/srv/nfs/shared(/.*)?'`
 
-restorecon -Rv /srv/nfs/shared
+`restorecon -Rv /srv/nfs/shared`
 
 ### 3. Configure NFS SELinux Booleans
 
-
+`
 setsebool -P nfs_export_all_rw off
 setsebool -P nfs_export_all_ro off
 setsebool -P nfsd_anon_write on
-
+`
 ### 4. Verify Configuration
 
 
-ls -ldZ /srv/nfs/shared
+`ls -ldZ /srv/nfs/shared`
 
-getsebool nfs_export_all_ro \
-nfs_export_all_rw nfsd_anon_write
+`getsebool nfs_export_all_ro nfs_export_all_rw nfsd_anon_write`
 
 ### 5. Test NFS Access
 
 (Run on: RHEL Client)
 
-touch /mnt/nfs/shared/selinux-test.txt
+`touch /mnt/nfs/shared/selinux-test.txt`
 
 (Run on: RHEL Server)
 
-ls -lZ /srv/nfs/shared/selinux-test.txt
+`ls -lZ /srv/nfs/shared/selinux-test.txt`
 
 ## Outcome
 
