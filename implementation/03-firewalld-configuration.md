@@ -62,23 +62,16 @@ Run on: **RHEL Server**
 ```bash
 systemctl status firewalld
 ```
+**Identify the interface.**
 
-**2. Identify active zones and interfaces**
-
-Run on: **RHEL Server**
+```bash
+nmcli device status
+```
+**Check its firewall zone**
 
 ```bash
 firewall-cmd --get-active-zones
 ```
-
-Example output:
-
-```text
-public
-  interfaces: ens160
-```
-
-
 **3. Inspect runtime configuration**
 
 Run on: **RHEL Server**
