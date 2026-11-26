@@ -78,17 +78,8 @@ public
   interfaces: ens160
 ```
 
-**3. Identify the interface's assigned zone**
 
-Run on: **RHEL Server**
-
-```bash
-firewall-cmd --get-zone-of-interface=ens160
-```
-
-Replace `ens160` with your actual server interface.
-
-**4. Inspect runtime configuration**
+**3. Inspect runtime configuration**
 
 Run on: **RHEL Server**
 
@@ -96,7 +87,7 @@ Run on: **RHEL Server**
 firewall-cmd --zone=public --list-all
 ```
 
-**5. Inspect permanent configuration**
+**4. Inspect permanent configuration**
 
 Run on: **RHEL Server**
 
@@ -104,7 +95,7 @@ Run on: **RHEL Server**
 firewall-cmd --permanent --zone=public --list-all
 ```
 
-**6. Inspect rich rules**
+**5. Inspect rich rules**
 
 Run on: **RHEL Server**
 
@@ -120,7 +111,7 @@ Permanent rules:
 firewall-cmd --permanent --zone=public --list-rich-rules
 ```
 
-**7. Validate firewall configuration**
+**6. Validate firewall configuration**
 
 Run on: **RHEL Server**
 
