@@ -62,12 +62,8 @@ Run on: **RHEL Server**
 ```bash
 systemctl status firewalld
 ```
-**Identify the interface.**
 
-```bash
-nmcli device status
-```
-**Check its firewall zone**
+**2. Check firewall zone**
 
 ```bash
 firewall-cmd --get-active-zones
@@ -110,12 +106,6 @@ Run on: **RHEL Server**
 
 ```bash
 firewall-cmd --check-config
-```
-
-Expected output:
-
-```text
-success
 ```
 
 **Important concepts:**
@@ -199,11 +189,6 @@ Run on: **RHEL Server**
 firewall-cmd --check-config
 ```
 
-Expected output:
-
-```text
-success
-```
 
 Apply the configuration:
 
