@@ -125,3 +125,16 @@ Validate the implementation by running connectivity tests across both client pro
 * **Q3:** You modified your permanent firewall configuration via `firewall-cmd --permanent ...` but did not execute `firewall-cmd --reload`. Which configuration is currently being evaluated for incoming packets?
 * **Q4:** You removed the `nfs` service from the active zone, yet outside clients can still query port 2049. What other directives or rule types inside `firewalld` might still be permitting that port?
 * **Q5:** What is the technical networking distinction between specifying an IP as `192.168.184.139` vs `192.168.184.139/32` within a firewall rich rule?
+
+
+Answer(Task):
+Task 1:
+1. systemctl status firewalld
+2. firewall-cmd --get-active-zone
+3. firewall-cmd --list-all
+4. firewall-cmd --permanent --zone=public --list-rich-rules
+5. firewall-cmd --permanent --zone=public --query-service=nfs
+firewall-cmd --permanent --zone=public --query-service=ssh
+6. firewall-cmd --check-config
+
+Task 2:
