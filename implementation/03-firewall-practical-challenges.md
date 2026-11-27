@@ -197,4 +197,3 @@ firewall-cmd --permanent --list-services
    firewall-cmd --permanent --zone=public --list-rich-rules
    ```
 
-### **Task 2:**
