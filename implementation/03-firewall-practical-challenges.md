@@ -197,3 +197,75 @@ firewall-cmd --permanent --list-services
    firewall-cmd --permanent --zone=public --list-rich-rules
    ```
 
+## Task 5
+
+1. 
+   ```bash
+   firewall-cmd --check-config
+   ```
+
+2. 
+   ```bash
+   firewall-cmd --reload
+   ```
+
+3. 
+   ```bash
+   firewall-cmd --list-rich-rules
+   ```
+
+4. 
+   ```bash
+   firewall-cmd --permanent --list-rich-rules
+   ```
+
+5. 
+   ```bash
+   firewall-cmd --get-active-zone
+   firewall-cmd --zone=public --list-all
+   ```
+
+---
+
+## Task 6: Connectivity Testing
+
+**On the Authorized RHEL Client (192.168.184.139):**
+
+**1. Connect to the NFSv4 share**
+
+```bash
+sudo mkdir -p /mnt/nfs/shared
+sudo mount -t nfs4 <SERVER_IP>:/srv/nfs/shared /mnt/nfs/shared
+```
+
+**2. Verify the mount**
+
+```bash
+findmnt /mnt/nfs/shared
+```
+
+**3. Access the mounted directory**
+
+```bash
+ls -la /mnt/nfs/shared
+```
+
+**4. Establish an SSH connection**
+
+```bash
+ssh username@<SERVER_IP>
+```
+
+**On the Unauthorized RHEL Client:**
+
+**5. Test TCP port 2049 (NFSv4)**
+
+```bash
+nmap -sT -Pn -p 2049 192.168.184.137
+```
+
+**6. Test TCP port 22 (SSH)**
+
+```bash
+nmap -sT -Pn -p 22 192.168.184.137
+```
