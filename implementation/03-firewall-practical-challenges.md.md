@@ -133,9 +133,8 @@ Task 1:
 2. firewall-cmd --get-active-zone
 3. firewall-cmd --list-all
 4. firewall-cmd --permanent --zone=public --list-rich-rules
-5. firewall-cmd --permanent --zone=public --query-service=nfs
-   
-firewall-cmd --permanent --zone=public --query-service=ssh
+5. `firewall-cmd --permanent --zone=public --query-service=nfs`    
+`firewall-cmd --permanent --zone=public --query-service=ssh`
 7. firewall-cmd --check-config
 
 Task 2:
