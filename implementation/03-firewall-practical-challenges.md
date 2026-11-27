@@ -121,5 +121,80 @@ Answer these without executing commands:
 firewall-cmd --permanent --zone=public --query-service=ssh
 7. firewall-cmd --check-config
 ```
+## Task 2
+
+**(RHEL Server):**
+```bash
+ip -4 -br addr
+```
+
+**(RHEL Client):**
+```bash
+ip -4 -br addr
+```
+
+---
+
+## Task 3
+
+```bash
+firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.184.139/32" port port="2049" protocol="tcp" accept'     //--zone is optional (use explicitely)
+
+firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.184.139/32" port port="22" protocol="tcp" accept'
+
+firewall-cmd --reload
+```
+
+**Verify the rules:**
+```bash
+firewall-cmd --permanent --list-rich-rules
+```
+
+**Check whether SSH and NFS services are already allowed:**
+```bash
+firewall-cmd --permanent --list-services
+```
+
+---
+
+## Task 4
+
+1. 
+   ```bash
+   firewall-cmd --permanent --zone=public --query-service=nfs
+   ```
+
+2. 
+   ```bash
+   firewall-cmd --permanent --remove-service=nfs
+   ```
+
+3. on authorized client:
+   ```bash
+   ssh username@<SERVER_IP>
+   ```
+
+   To verify that you are connected to the server:
+   ```bash
+   hostname
+   ```
+
+4. 
+   ```bash
+   firewall-cmd --permanent --zone=public --query-service=ssh
+   firewall-cmd --permanent --zone=public --query-port=22/tcp
+   firewall-cmd --permanent --zone=public --remove-service=ssh
+   firewall-cmd --permanent --zone=public --remove-port=22/tcp
+   ```
+
+   Apply changes :
+   ```bash
+   firewall-cmd --reload
+   ```
+
+   Verify the restricted SSH rich rule:
+   ```bash
+   firewall-cmd --permanent --zone=public --list-rich-rules
+   ```
 
 ### **Task 2:**
